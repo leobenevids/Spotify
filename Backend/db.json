@@ -1,0 +1,105 @@
+{
+  "userList": [
+    {
+      "id": 1,
+      "name": "admin",
+      "email": "admin@admin.com"
+    },
+    {
+      "name": "leo",
+      "email": "leo@email.com",
+      "password": "ladjslk1231",
+      "id": 2
+    }
+  ],
+  "publicPlaylists": [
+    {
+      "id": 1,
+      "name": "Rock",
+      "cover": "https://i.scdn.co/image/ab67706f00000003fd6bff9e6d173b371e5865e2",
+      "tracks": [
+        {
+          "id": 1,
+          "name": "Highway to Hell",
+          "audio": "https://www.youtube.com/watch?v=l482T0yNkeo"
+        },
+        {
+          "id": 2,
+          "name": "Paradise City",
+          "audio": "https://www.youtube.com/watch?v=Rbm6GXllBiw"
+        },
+        {
+          "id": 3,
+          "name": "Ace of Spades",
+          "audio": "https://www.youtube.com/watch?v=3mbvWn1EY6g"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Pop",
+      "cover": "https://i.scdn.co/image/ab67706f00000003c7a1ff7b6214f0d6dc8db990",
+      "tracks": [
+        {
+          "id": 1,
+          "name": "Jealousy Jealousy",
+          "audio": "https://www.youtube.com/watch?v=Z-9gQjUZMm0"
+        },
+        {
+          "id": 2,
+          "name": "Break my Heart",
+          "audio": "https://www.youtube.com/watch?v=Y6feSJsCxIw"
+        },
+        {
+          "id": 3,
+          "name": "Need to Know",
+          "audio": "https://www.youtube.com/watch?v=f9CPymNwkYw"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Hip-Hop",
+      "cover": "https://i.scdn.co/image/ab67706f0000000317f5a91128f800d0223948cd",
+      "tracks": [
+        {
+          "id": 1,
+          "name": "Gangsta Gangsta",
+          "audio": "https://www.youtube.com/watch?v=aCAkHFavEdw"
+        },
+        {
+          "id": 2,
+          "name": "You Know How We Do It",
+          "audio": "https://www.youtube.com/watch?v=HvC96EaQDmU"
+        },
+        {
+          "id": 3,
+          "name": "Goosebumps",
+          "audio": "https://www.youtube.com/watch?v=8MvGyEb43-M"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Indie",
+      "cover": "https://i.scdn.co/image/ab67706f0000000384ca44ea6a030d9a6e3fbbd3",
+      "tracks": [
+        {
+          "id": 1,
+          "name": "Do I Wanna Know",
+          "audio": "https://www.youtube.com/watch?v=bpOSxM0rNPM"
+        },
+        {
+          "id": 2,
+          "name": "Electric Feel",
+          "audio": "https://www.youtube.com/watch?v=MmZexg8sxyk"
+        },
+        {
+          "id": 3,
+          "name": "Pumped Up Kicks",
+          "audio": "https://www.youtube.com/watch?v=k_aQYP8rsgE"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+Login/Logout
+Editar Usuário
+Cadastrar Playlists Privadas
+Buscar músicas por nome
+Adicionar/Remover músicas de playlist
