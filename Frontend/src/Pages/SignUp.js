@@ -4,6 +4,8 @@ import Footer from "../Components/Footer";
 import { FormContainer, FormWrapper } from "./styles/SignUp";
 import axios from "axios";
 
+const url = "http://localhost:5000";
+
 const SignUp = () => {
   const initialValues = { username: "", email: "", password: "" };
   const [formValues, setFormValues] = useState(initialValues);
@@ -19,10 +21,11 @@ const SignUp = () => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
+    axios.post(`${url}/userList`, formValues).then((res) => console.log(res));
   };
 
   useEffect(() => {
-    localStorage.setItem("form", JSON.stringify(formValues));
+    // localStorage.setItem("form", JSON.stringify(formValues));
     console.log(formErrors);
     if (Object.keys(formErrors).lenght === 0 && isSubmit) {
       console.log(formValues);
@@ -50,15 +53,11 @@ const SignUp = () => {
     if (!values.emailconfirm) {
       errors.emailconfirm = "Confirmação de e-mail obrigatória";
     } else if (values.emailconfirm != values.email) {
-      errors.emailconfirm = "A senhas devem ser iguais";
+      errors.emailconfirm = "Os e-mails não coincidem";
     }
-    // if (!values.date) {
-    //   errors.date = "Data de nascimento obrigatória";
-    // }
+
     return errors;
   };
-
-  axios.post("userList", { formValues }).then(() => console.log("ok"));
 
   return (
     <>
@@ -114,17 +113,6 @@ const SignUp = () => {
             <small>Isso será exibido no seu perfil</small>
             <i>{formErrors.username}</i>
           </div>
-          {/* <div>
-            <p>Qual sua data de nascimento?</p>
-            <input
-              type="date"
-              id="date"
-              name="date"
-              value={formValues.date}
-              onChange={handleChange}
-            />
-            <i>{formErrors.date}</i>
-          </div> */}
           <button>Inscrever-se</button>
           {Object.keys(formErrors).length === 0 && isSubmit ? (
             <div className="success">Signed in successfully!</div>

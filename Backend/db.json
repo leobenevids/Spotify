@@ -10,6 +10,13 @@
       "email": "leo@email.com",
       "password": "ladjslk1231",
       "id": 2
+    },
+    {
+      "username": "fulano",
+      "email": "fulano@email",
+      "password": "12345689",
+      "emailconfirm": "fulano@email.com",
+      "id": 3
     }
   ],
   "publicPlaylists": [

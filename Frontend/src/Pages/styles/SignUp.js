@@ -31,7 +31,7 @@ export const FormContainer = styled.form`
   }
 
   button {
-      margin-left: 4rem;
+     margin: 1rem;
     }
 
   div {
@@ -42,7 +42,6 @@ export const FormContainer = styled.form`
 
     p {
       height: 2rem;
-      font-family: 'GothamLight';
     }
 
     input {
