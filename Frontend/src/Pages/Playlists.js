@@ -17,7 +17,7 @@ const Playlists = () => {
       setPublicPlaylists(data);
     });
     console.log(publicPlaylists);
-  }, [publicPlaylists]);
+  }, [setPublicPlaylists]);
 
   return (
     <>
@@ -30,7 +30,7 @@ const Playlists = () => {
               <Link to={`/playlistdetails/${playlist.id}`}>
                 <PlaylistCard key={key}>
                   <p>{playlist.name}</p>
-                  <img src={playlist.cover} alt="ablubluble" />
+                  <img src={playlist.cover} alt="playlist cover" />
                 </PlaylistCard>
               </Link>
             );

@@ -7,7 +7,7 @@ import SignIn from "../Pages/SignIn";
 import SignUp from "../Pages/SignUp";
 import Playlists from "../Pages/Playlists";
 import PlaylistDetails from "../Pages/PlaylistDetails";
-import { PlaylistsData } from "../PlaylistsData";
+
 
 export default function routes() {
   return (
@@ -17,10 +17,10 @@ export default function routes() {
       <Route path="/plans" element={<Plans />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
-      <Route path="/playlists" element={<Playlists PlaylistsData={PlaylistsData} />} />
+      <Route path="/playlists" element={<Playlists />} />
       <Route
         path="/playlistdetails/:id"
-        element={<PlaylistDetails PlaylistsData={PlaylistsData} />}
+        element={<PlaylistDetails  />}
       />
     </Routes>
   );

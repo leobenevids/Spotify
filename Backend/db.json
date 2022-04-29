@@ -21,17 +21,17 @@
         {
           "id": 1,
           "name": "Highway to Hell",
-          "audio": "https://www.youtube.com/watch?v=l482T0yNkeo"
+          "audio": "https://github.com/leobenevids/Spotify/blob/main/Backend/Tracks/Rock/highwaytohell.mp3"
         },
         {
           "id": 2,
           "name": "Paradise City",
-          "audio": "https://www.youtube.com/watch?v=Rbm6GXllBiw"
+          "audio": "https://github.com/leobenevids/Spotify/blob/main/Backend/Tracks/Rock/paradisecity.mp3"
         },
         {
           "id": 3,
           "name": "Ace of Spades",
-          "audio": "https://www.youtube.com/watch?v=3mbvWn1EY6g"
+          "audio": "https://github.com/leobenevids/Spotify/blob/main/Backend/Tracks/Rock/aceofspades.mp3"
         }
       ]
     },

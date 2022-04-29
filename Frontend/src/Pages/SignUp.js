@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { FormContainer, FormWrapper } from "./styles/SignUp";
+import axios from "axios";
 
 const SignUp = () => {
   const initialValues = { username: "", email: "", password: "" };
@@ -21,7 +22,7 @@ const SignUp = () => {
   };
 
   useEffect(() => {
-    localStorage.setItem('form', JSON.stringify(formValues))
+    localStorage.setItem("form", JSON.stringify(formValues));
     console.log(formErrors);
     if (Object.keys(formErrors).lenght === 0 && isSubmit) {
       console.log(formValues);
@@ -51,11 +52,13 @@ const SignUp = () => {
     } else if (values.emailconfirm != values.email) {
       errors.emailconfirm = "A senhas devem ser iguais";
     }
-    if (!values.date) {
-      errors.date = "Data de nascimento obrigatória";
-    }
+    // if (!values.date) {
+    //   errors.date = "Data de nascimento obrigatória";
+    // }
     return errors;
   };
+
+  axios.post("userList", { formValues }).then(() => console.log("ok"));
 
   return (
     <>
@@ -111,7 +114,7 @@ const SignUp = () => {
             <small>Isso será exibido no seu perfil</small>
             <i>{formErrors.username}</i>
           </div>
-          <div>
+          {/* <div>
             <p>Qual sua data de nascimento?</p>
             <input
               type="date"
@@ -121,7 +124,7 @@ const SignUp = () => {
               onChange={handleChange}
             />
             <i>{formErrors.date}</i>
-          </div>
+          </div> */}
           <button>Inscrever-se</button>
           {Object.keys(formErrors).length === 0 && isSubmit ? (
             <div className="success">Signed in successfully!</div>
