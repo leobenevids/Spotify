@@ -108,5 +108,13 @@
         }
       ]
     }
+  ],
+  "userplaylist": [
+    {
+      "id": "",
+      "name": "",
+      "cover": "",
+      "track": ""
+    }
   ]
 }

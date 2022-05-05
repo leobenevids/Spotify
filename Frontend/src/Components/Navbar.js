@@ -23,6 +23,9 @@ const Navbar = () => {
           <li>
             <Link to="/signin">Entrar</Link>
           </li>
+          <li>
+            <Link to="/yourplaylists">Suas Playlists</Link>
+          </li>
         </ul>
       </NavbarContainer>
     </NavbarWrapper>

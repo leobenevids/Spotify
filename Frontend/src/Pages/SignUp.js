@@ -21,7 +21,9 @@ const SignUp = () => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
-    axios.post(`${url}/userList`, formValues).then((res) => console.log(res));
+    if (setIsSubmit(true)) {
+      axios.post(`${url}/userList`, formValues).then((res) => console.log(res));
+    }
   };
 
   useEffect(() => {
