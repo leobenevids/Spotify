@@ -3,10 +3,14 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { FormContainer, FormWrapper } from "./styles/SignUp";
 import axios from "axios";
+import { AuthContext } from "../Providers/Auth";
 
 const url = "http://localhost:5000";
 
 const SignUp = () => {
+  const { user, setUser } = React.useContext(AuthContext);
+  console.log(user);
+
   const initialValues = { username: "", email: "", password: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -21,15 +25,13 @@ const SignUp = () => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
-    if (setIsSubmit(true)) {
-      axios.post(`${url}/userList`, formValues).then((res) => console.log(res));
-    }
+    axios.post(`${url}/userList`, formValues).then((res) => console.log(res));
   };
 
   useEffect(() => {
-    // localStorage.setItem("form", JSON.stringify(formValues));
     console.log(formErrors);
     if (Object.keys(formErrors).lenght === 0 && isSubmit) {
+      // axios.post(`${url}/userList`, formValues).then((res) => console.log(res));
       console.log(formValues);
     }
   }, [formErrors]);

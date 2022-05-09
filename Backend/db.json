@@ -17,6 +17,20 @@
       "password": "12345689",
       "emailconfirm": "fulano@email.com",
       "id": 3
+    },
+    {
+      "username": "ksldjjadlkajskdl",
+      "email": "leo.gnrs@gmail.com",
+      "password": "leonardo",
+      "emailconfirm": "leo.gnrs@gmail.com",
+      "id": 4
+    },
+    {
+      "username": "errado",
+      "email": "leo.gnrs@gmail.com",
+      "password": "61564654",
+      "emailconfirm": "leo.gnr@gmail.com",
+      "id": 5
     }
   ],
   "publicPlaylists": [

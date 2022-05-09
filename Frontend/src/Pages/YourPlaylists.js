@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Wrapper } from "./styles/YourPlaylists";
-import axios from 'axios'
+import axios from "axios";
 
-const url = "http://localhost:5000"
+const url = "http://localhost:5000";
 
 const YourPlaylists = () => {
+
   const [formValues, setFormValues] = useState("");
 
   const handleChange = (e) => {
@@ -14,7 +15,9 @@ const YourPlaylists = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`${url}/userplaylist`, formValues).then((res) => console.log(res));
+    axios
+      .post(`${url}/userplaylist`, formValues)
+      .then((res) => console.log(res));
   };
 
   return (
