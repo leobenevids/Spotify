@@ -3,14 +3,10 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { FormContainer, FormWrapper } from "./styles/SignUp";
 import axios from "axios";
-import { AuthContext } from "../Providers/Auth";
 
 const url = "http://localhost:5000";
 
 const SignUp = () => {
-  const { user, setUser } = React.useContext(AuthContext);
-  console.log(user);
-
   const initialValues = { username: "", email: "", password: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});

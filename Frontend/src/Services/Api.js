@@ -5,3 +5,7 @@ const Api = axios.create({
 });
 
 export default Api;
+
+export const createSession = async (email, password) => {
+  return Api.post("/sessions", { email, password });
+};
