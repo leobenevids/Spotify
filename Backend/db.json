@@ -12,13 +12,6 @@
       "id": 2
     },
     {
-      "username": "fulano",
-      "email": "fulano@email",
-      "password": "12345689",
-      "emailconfirm": "fulano@email.com",
-      "id": 3
-    },
-    {
       "username": "ksldjjadlkajskdl",
       "email": "leo.gnrs@gmail.com",
       "password": "leonardo",
@@ -31,6 +24,12 @@
       "password": "61564654",
       "emailconfirm": "leo.gnr@gmail.com",
       "id": 5
+    },
+    {
+      "name": "teste",
+      "email": "teste@email.com",
+      "password": "11223344",
+      "id": 6
     }
   ],
   "publicPlaylists": [
@@ -123,12 +122,12 @@
       ]
     }
   ],
-  "userplaylist": [
+
+  "sessions": [
     {
-      "id": "",
-      "name": "",
-      "cover": "",
-      "track": ""
+      "id": "1",
+      "email": "aaaa@email.com",
+      "password": "aaaa123"
     }
   ]
 }

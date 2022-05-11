@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
 
     localStorage.setItem("user", JSON.stringify(loggedUser));
 
-    if (password === "secret123") {
+    if (password) {
       setUser(loggedUser);
       navigate("/");
     }
@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ uthenticated: !!user, user, loading, login, logout }}
+      value={{ authenticated: !!user, user, loading, login, logout }}
     >
       {children}
     </AuthContext.Provider>

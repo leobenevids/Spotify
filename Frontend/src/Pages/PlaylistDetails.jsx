@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import Api from "../Services/Api";
+import { Api } from "../Services/Api";
 
 import {
   PlaylistDetailsWrapper,

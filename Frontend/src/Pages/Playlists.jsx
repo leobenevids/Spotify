@@ -7,7 +7,7 @@ import {
   PlaylistsContainer,
   PlaylistCard,
 } from "./styles/Playlists";
-import Api from "../Services/Api";
+import { Api } from "../Services/Api";
 
 const Playlists = () => {
   const [publicPlaylists, setPublicPlaylists] = useState([]);

@@ -14,7 +14,7 @@ export const PlaylistDetailsContainer = styled.div`
   width: 75%;
   height: 75%;
   display: flex;
-  align-item: center;
+  align-items: center;
   justify-content: center;
   padding: 1rem;
 

@@ -10,7 +10,7 @@ export const FormWrapper = styled.div`
   padding: 1rem;
 `;
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
   width: 33.3%;
   height: 100%;
   align-items: center;
