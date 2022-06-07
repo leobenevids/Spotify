@@ -1,5 +1,5 @@
-Login/Logout
+Login/Logout (n vou conseguir fazer)
 Editar Usuário
-Cadastrar Playlists Privadas
-Buscar músicas por nome
+Cadastrar Playlists Privadas (n vou conseguir fazer)
+Buscar músicas por nome (n vou conseguir fazer)
 Adicionar/Remover músicas de playlist

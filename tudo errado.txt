@@ -1,0 +1,5 @@
+Get não pega parâmetro (PlaylistDetails)
+
+Música não toca
+
+Post não envia corretamente

@@ -21,7 +21,10 @@ export const PlaylistsContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   padding: 1rem 0;
 
-  a { color: inherit; text-decoration: none;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
 
 export const PlaylistCard = styled.div`

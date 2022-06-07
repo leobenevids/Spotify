@@ -1,53 +1,85 @@
-import React, { useState, useEffect } from "react";
-import { Wrapper } from "./styles/YourPlaylists";
+import React, { useState } from "react";
+import { Wrapper, Container } from "./styles/YourPlaylists";
 import axios from "axios";
+
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
 const url = "http://localhost:5000";
 
 const YourPlaylists = () => {
+  const initialValues = {
+    name: "",
+    cover: "",
+    tracks: [
+      {
+        name: "",
+        audio: "",
+      },
+    ],
+  };
 
-  const [formValues, setFormValues] = useState("");
+  const [playlist, setPlaylist] = useState(initialValues);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
+    setPlaylist({ ...playlist, [e.target.name]: e.target.value.trim() });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post(`${url}/userplaylist`, formValues)
-      .then((res) => console.log(res));
+    const data = JSON.stringify(playlist);
+    console.log(data);
   };
 
   return (
-    <Wrapper>
-      <h1>Suas Playlists</h1>
-      <h2>Cadastre sua playlist</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="nome da playlist"
-          value={formValues.playlistname}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          placeholder="capa da playlist"
-          value={formValues.playlistcover}
-          onChange={handleChange}
-        />
-        <form>
-          <input
-            type="text"
-            placeholder="música"
-            value={formValues.playlistmusic}
-            onChange={handleChange}
-          />
-        </form>
-        <button>Salvar</button>
-      </form>
-    </Wrapper>
+    <>
+      <Navbar />
+      <Wrapper>
+        <Container>
+          <h2>Cadastre uma playlist</h2>
+
+          <form onSubmit={handleSubmit}>
+            <label>Nome da playlist:</label>
+            <input
+              type="text"
+              placeholder="insira o nome da playlist"
+              name="name"
+              value={playlist.name}
+              onChange={handleChange}
+            />
+
+            <label>Capa da playlist:</label>
+            <input
+              type="text"
+              placeholder="insira a url de uma capa"
+              name="cover"
+              value={playlist.cover}
+              onChange={handleChange}
+            />
+
+            <label>Música:</label>
+            <input
+              type="text"
+              placeholder="insira o nome de uma música"
+              name="tracks"
+              value={playlist.tracks.name}
+              onChange={handleChange}
+            />
+
+            <input
+              type="text"
+              placeholder="insira a url da música"
+              name="tracks"
+              value={playlist.tracks.audio}
+              onChange={handleChange}
+            />
+
+            <button type="submit">salvar</button>
+          </form>
+        </Container>
+      </Wrapper>
+      <Footer />
+    </>
   );
 };
 

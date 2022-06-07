@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FormWrapper = styled.div`
+export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
@@ -8,17 +8,13 @@ export const FormWrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: 1rem;
-`;
 
-export const FormContainer = styled.form`
-  width: 33.3%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  div {
-    margin-top: 2rem;
+  form {
+    width: 33.3%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -28,8 +24,23 @@ export const FormContainer = styled.form`
       margin-bottom: 1rem;
     }
 
+    label {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    input {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      height: 2.5rem;
+      ::placeholder {
+        color: var(--light-green);
+      }
+    }
+
     button {
-      width: 50%;
+      width: 80%;
       margin: 1.5rem auto;
     }
 
@@ -44,7 +55,8 @@ export const FormContainer = styled.form`
       color: rgba(0, 0, 0, 0.5);
       width: 100%;
 
-      p {
+      label {
+        border: 1px solid red;
         font-size: 0.9rem;
         margin-top: 0.3rem;
         margin-left: 1rem;
@@ -52,14 +64,6 @@ export const FormContainer = styled.form`
 
       :hover {
         border: 1px solid black;
-      }
-    }
-
-    input {
-      padding-left: 1rem;
-      height: 2.5rem;
-      ::placeholder {
-        color: var(--light-green);
       }
     }
 

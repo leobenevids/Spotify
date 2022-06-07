@@ -11,14 +11,22 @@ import {
 import { useParams } from "react-router-dom";
 
 const PlaylistDetails = () => {
-  const [publicPlaylists, setPublicPlaylists] = useState([]);
-  const { id } = useParams();
+  const [playlists, setPlaylists] = useState([]);
+  const { _id } = useParams();
+
+  console.log(_id);
+
+  const params = new URLSearchParams([['id', _id]]);
 
   useEffect(() => {
-    Api.get("publicPlaylists", { params: { id } }).then(({ data }) => {
-      setPublicPlaylists(data);
-    });
-    console.log(publicPlaylists);
+
+    Api.get("playlists", { params }).then(({ data }) => {
+        setPlaylists(data);
+         console.log(playlists)
+      });
+    
+
+    console.log(playlists);
   }, []);
 
   return (
@@ -26,7 +34,7 @@ const PlaylistDetails = () => {
       <Navbar />
       <PlaylistDetailsWrapper>
         <PlaylistDetailsContainer>
-          {publicPlaylists.map((playlist) => {
+          {playlists.map((playlist) => {
             console.log(playlist);
             return (
               <div>

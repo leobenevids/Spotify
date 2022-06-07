@@ -12,8 +12,8 @@ import { Api } from "../Services/Api";
 const Playlists = () => {
   const [publicPlaylists, setPublicPlaylists] = useState([]);
 
-  useEffect(() => {
-    Api.get("publicPlaylists").then(({ data }) => {
+  useEffect(async () => {
+    await Api.get("playlists").then(({ data }) => {
       setPublicPlaylists(data);
     });
     console.log(publicPlaylists);
@@ -27,7 +27,7 @@ const Playlists = () => {
         <PlaylistsContainer>
           {publicPlaylists.map((playlist, key) => {
             return (
-              <Link to={`/playlistdetails/${playlist.id}`}>
+              <Link to={`/playlists/${playlist._id}`}>
                 <PlaylistCard key={key}>
                   <p>{playlist.name}</p>
                   <img src={playlist.cover} alt="playlist cover" />
