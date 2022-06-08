@@ -8,12 +8,42 @@ export const PlaylistDetailsWrapper = styled.div`
   width: 100%;
   height: 100%;
   background-color: #fbfbfc;
+
+  h2 {
+    margin-top: 0.5em;
+
+    span {
+      color: var(--default-green);
+    }
+  }
+`;
+
+export const EditButton = styled.button`
+  margin: 2em;
+  padding: 0;
+  border-radius: 5px;
+  width: 8em;
+  height: 3.5em;
+`;
+
+export const DeleteButton = styled.button`
+  margin: 2em;
+  background-color: #dc143c;
+  padding: 0;
+  border-radius: 5px;
+  width: 8em;
+  height: 3.5em;
+
+  :hover {
+    background-color: red;
+  }
 `;
 
 export const PlaylistDetailsContainer = styled.div`
   width: 75%;
   height: 75%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 1rem;
@@ -56,6 +86,26 @@ export const PlaylistDetailsContainer = styled.div`
           }
         }
       }
+    }
+  }
+`;
+
+export const EditForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+
+  label {
+    margin-bottom: 0.5em;
+  }
+
+  input {
+    margin-bottom: 1em;
+    height: 3em;
+    min-width: 250px;
+    padding: 0.5em;
+    :focus {
+      border: 1px inset black;
     }
   }
 `;

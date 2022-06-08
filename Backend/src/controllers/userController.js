@@ -4,6 +4,7 @@ module.exports = {
 
   create: async (req, res) => {
     try {
+      console.log(req.body)
       const register = await Users.create(req.body);
       return res.status(201).json(register);
     } catch (err) {

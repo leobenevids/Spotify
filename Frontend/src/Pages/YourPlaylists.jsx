@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { Wrapper, Container } from "./styles/YourPlaylists";
-import axios from "axios";
-
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-
-const url = "http://localhost:5000";
+import { Api } from "../Services/Api";
 
 const YourPlaylists = () => {
   const initialValues = {
@@ -19,16 +16,20 @@ const YourPlaylists = () => {
     ],
   };
 
-  const [playlist, setPlaylist] = useState(initialValues);
+  const [playlistForm, setPlaylist] = useState(initialValues);
 
   const handleChange = (e) => {
-    setPlaylist({ ...playlist, [e.target.name]: e.target.value.trim() });
+    setPlaylist({ ...playlistForm, [e.target.name]: e.target.value.trim() });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = JSON.stringify(playlist);
-    console.log(data);
+
+    console.log(playlistForm);
+
+    Api.post("/playlists/create", playlistForm)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -44,7 +45,7 @@ const YourPlaylists = () => {
               type="text"
               placeholder="insira o nome da playlist"
               name="name"
-              value={playlist.name}
+              value={playlistForm.name}
               onChange={handleChange}
             />
 
@@ -53,16 +54,16 @@ const YourPlaylists = () => {
               type="text"
               placeholder="insira a url de uma capa"
               name="cover"
-              value={playlist.cover}
+              value={playlistForm.cover}
               onChange={handleChange}
             />
 
-            <label>Música:</label>
+            {/* <label>Música:</label>
             <input
               type="text"
               placeholder="insira o nome de uma música"
               name="tracks"
-              value={playlist.tracks.name}
+              value={playlistForm.tracks.name}
               onChange={handleChange}
             />
 
@@ -70,9 +71,9 @@ const YourPlaylists = () => {
               type="text"
               placeholder="insira a url da música"
               name="tracks"
-              value={playlist.tracks.audio}
+              value={playlistForm.tracks.audio}
               onChange={handleChange}
-            />
+            /> */}
 
             <button type="submit">salvar</button>
           </form>

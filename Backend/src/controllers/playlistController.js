@@ -13,6 +13,13 @@ module.exports = {
 
   findAll: async (req, res) => {
     try {
+      const id = req.query.id;
+      console.log(id)
+      if (id) {
+        const findOne = await Playlists.findById(id);
+        console.log(findOne)
+        return res.status(200).json(findOne);
+      }
       const getAll = await Playlists.find();
       return res.status(200).json(getAll);
     } catch (err) {

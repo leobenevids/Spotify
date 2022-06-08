@@ -19,10 +19,8 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = JSON.stringify(userForm);
-    console.log(data);
 
-    Api.post("/users/create", { data })
+    Api.post("/users/create", userForm)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };

@@ -30,17 +30,17 @@ const GlobalStyle = createGlobalStyle`
     --default-gray: #919496;
     --default-red: #ff6961;
   }
-  
+
   button {
     background: var(--default-green);
-    color: white;
-    text-transform: uppercase;
-    padding: 15px 60px;
-    border: none;
-    border-radius: 30px;
-    letter-spacing: 1px;
-    font-weight: bold;
-    transition: all 300ms ease;
+  color: white;
+  text-transform: uppercase;
+  padding: 15px 60px;
+  border: none;
+  border-radius: 30px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  transition: all 300ms ease;
   }
   
   button:hover {

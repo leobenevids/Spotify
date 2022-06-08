@@ -1,5 +1,3 @@
-Get não pega parâmetro (PlaylistDetails)
-
 Música não toca
 
-Post não envia corretamente
+Como enviar para Array
