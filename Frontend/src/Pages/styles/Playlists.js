@@ -40,6 +40,13 @@ export const PlaylistCard = styled.div`
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+  }
+
   p {
     font-size: 1.3rem;
   }
@@ -64,5 +71,23 @@ export const PlaylistCard = styled.div`
       transition: 0.5s ease-in-out;
       transform: scale(1.1);
     }
+  }
+`;
+
+export const PlaylistButton = styled.button`
+  padding: 5px;
+  margin: 1em;
+`;
+
+export const DeleteButton = styled.button`
+  background-color: #dc143c;
+  padding: 0;
+  border-radius: 5px;
+  width: 2em;
+  height: 2em;
+  margin-bottom: 0.5em;
+
+  :hover {
+    background-color: red;
   }
 `;

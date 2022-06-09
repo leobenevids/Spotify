@@ -4,6 +4,8 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { Api } from "../Services/Api";
 
+import { Navigate } from "react-router-dom";
+
 const YourPlaylists = () => {
   const initialValues = {
     name: "",
@@ -32,6 +34,12 @@ const YourPlaylists = () => {
       .catch((err) => console.log(err));
   };
 
+  const confirmAdd = () => {
+    alert("Playlist adicionada!").then(() => {
+      <Navigate to="/playlists" />;
+    });
+  };
+
   return (
     <>
       <Navbar />
@@ -58,24 +66,9 @@ const YourPlaylists = () => {
               onChange={handleChange}
             />
 
-            {/* <label>Música:</label>
-            <input
-              type="text"
-              placeholder="insira o nome de uma música"
-              name="tracks"
-              value={playlistForm.tracks.name}
-              onChange={handleChange}
-            />
-
-            <input
-              type="text"
-              placeholder="insira a url da música"
-              name="tracks"
-              value={playlistForm.tracks.audio}
-              onChange={handleChange}
-            /> */}
-
-            <button type="submit">salvar</button>
+            <button type="submit" onClick={confirmAdd}>
+              salvar
+            </button>
           </form>
         </Container>
       </Wrapper>
