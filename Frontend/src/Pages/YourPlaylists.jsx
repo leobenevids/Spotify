@@ -10,12 +10,12 @@ const YourPlaylists = () => {
   const initialValues = {
     name: "",
     cover: "",
-    tracks: [
-      {
-        name: "",
-        audio: "",
-      },
-    ],
+    // tracks: [
+    //   {
+    //     name: "",
+    //     audio: "",
+    //   },
+    // ],
   };
 
   const [playlistForm, setPlaylist] = useState(initialValues);

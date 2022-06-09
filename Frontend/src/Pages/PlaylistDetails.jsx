@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import ModalForm from "../Components/ModalForm";
+
 import { Api } from "../Services/Api";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
@@ -16,9 +18,16 @@ import {
 import { useParams } from "react-router-dom";
 
 const PlaylistDetails = () => {
-  const [playlist, setPlaylist] = useState({ cover: "", tracks: [] });
-
+  const [playlist, setPlaylist] = useState({
+    cover: "",
+    tracks: [{ name: "", audio: "" }],
+  });
   const [updatedPlaylist, setUpdatedPlaylist] = useState({ playlist });
+
+  const trackName = playlist.tracks.map((track) => track.name);
+  const trackAudio = playlist.tracks.map((track) => track.audio);
+
+  console.log(trackName, trackAudio);
 
   const { _id } = useParams();
 
@@ -34,6 +43,8 @@ const PlaylistDetails = () => {
   useEffect(() => {
     Api.get("/playlists", { params }).then(({ data }) => {
       setPlaylist(data);
+
+      // console.log(data);
     });
   }, []);
 
@@ -46,6 +57,8 @@ const PlaylistDetails = () => {
     Api.put(`/playlists/${_id}`, updatedPlaylist)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
+
+    console.log(updatedPlaylist);
 
     window.location.reload();
   };
@@ -69,12 +82,10 @@ const PlaylistDetails = () => {
           <div>
             <img src={playlist.cover} alt="playlist cover" />
             <section>
-              <button>Adicionar música</button>
               {playlist.tracks.map((track) => {
                 return (
                   <ul key={playlist._id}>
                     <li>
-                      {" "}
                       {track.name}
                       <audio controls="controls">
                         <source src={track.audio} type="audio/mpeg" />
@@ -85,6 +96,8 @@ const PlaylistDetails = () => {
               })}
             </section>
           </div>
+
+          {/* <ModalForm /> */}
 
           <section>
             {" "}
@@ -112,6 +125,22 @@ const PlaylistDetails = () => {
               placeholder="insira a nova url de capa"
               name="cover"
               value={updatedPlaylist.cover}
+              onChange={handleChange}
+            />
+
+            <label>Adicione um música:</label>
+            <input
+              type="text"
+              placeholder="insira o nome da música"
+              name="cover"
+           //   value={updatedPlaylist.tracks.map((track) => track.name)}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              placeholder="insira a url da música"
+              name="cover"
+          //    value={updatedPlaylist.tracks.map((track) => track.audio)}
               onChange={handleChange}
             />
             <button type="submit">salvar</button>
